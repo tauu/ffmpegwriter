@@ -51,7 +51,7 @@ For further information, have a look at the matlab help text supplied with ffmpe
 Include video in LaTeX
 ----------------------
 
-The videos created by ffmpegWriter can be included in LaTeX document with the help of the media9 package. 
+The videos created by ffmpegWriter can be included in a LaTeX document with the help of the media9 package. 
 ```latex
 \usepackage{media9}
 

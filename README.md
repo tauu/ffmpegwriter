@@ -21,20 +21,25 @@ A small example should be sufficient to demonstrate how to use ffmpegWriter.
 ```matlab
 fw = ffmpegWriter();                     % initialize ffmpegWriter
 fw.ffmpeg = '/usr/local/bin/ffmpeg'      % set path to ffmpeg on OS X (if installed using homebrew)
-% fw.ffmpeg = 'C:\ffmpeg\bin\ffmpeg.exe' % set path to ffmpeg on Windows (if installed to C:\ffmpeg\bin\)
+% fw.ffmpeg = 'C:\ffmpeg\bin\ffmpeg.exe' % set path to ffmpeg on Windows 
+%                                        %     (if installed to C:\ffmpeg\bin\)
 %                                        % setting the path to ffmpeg is not necessary on Linux
 x = [1:0.01:pi];
 for k=1:20
     plot(x,sin(k*x)); 
     fw.getFrame();                       % append current figure as a frame to the video
 end
-fw.writeMovie('sin.mp4',5);              % create h264 encoded video with a framerate of 5 frames/second and write it to sin.mp4
-% fw.writeMovie('sin.webm',5);           % create vp8/webm encoded video with a framerate of 5 frames/second and write it to sin.webm
+fw.writeMovie('sin.mp4',5);              % create h264 encoded video with a
+                                         % framerate of 5 frames/second and
+ 				         % write it to sin.mp4
+% fw.writeMovie('sin.webm',5);           % create vp8/webm encoded video with a 
+                                         % framerate of 5 frames/second and
+                                         % write it to sin.webm
 ```
 
 Some additional examples:
 ```matlab
-fw = ffmpegWriter([640 480]);   % initialize ffmpegWriter and set size of the final video to 640 x 480
+fw = ffmpegWriter([640 480]);  % dimensions of the final video are set to 640 x 480
 ```
 
 ```matlab

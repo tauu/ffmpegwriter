@@ -31,7 +31,7 @@ for k=1:20
 end
 fw.writeMovie('sin.mp4',5);              % create h264 encoded video with a
                                          % framerate of 5 frames/second and
- 				         % write it to sin.mp4
+                                         % write it to sin.mp4
 % fw.writeMovie('sin.webm',5);           % create vp8/webm encoded video with a 
                                          % framerate of 5 frames/second and
                                          % write it to sin.webm
@@ -47,3 +47,23 @@ fw.getFrame(h);                 % append current state of figure h to the video
 ```
 
 For further information, have a look at the matlab help text supplied with ffmpegWriter (help ffmpegWriter).
+
+Include video in LaTeX
+----------------------
+
+The videos created by ffmpegWriter can be included in LaTeX document with the help of the media9 package. 
+```latex
+\usepackage{media9}
+
+...
+
+\includemedia[
+  activate=pageopen,        
+  width=300pt,
+  height=200pt,
+  addresource=sin.mp4,      % path to video file
+  flashvars={%
+     src=sin.mp4            % use same path as for addresource!
+  }  
+]{}{StrobeMediaPlayback.swf}
+```

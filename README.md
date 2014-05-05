@@ -1,7 +1,10 @@
 ffmpegwriter
 ============
 
-A Matlab tool for creating movies.
+A Matlab tool for creating movies/videos with some advantages over the builtin functions:
+  * supports more efficient video formats (h264,webm,...)
+  * circumvents limitations of the builtin getFrame() function
+  * supports Windows/Linux/OS X (Matlab supports e.g. mpeg4 only on Windows systems)
 
 Installation
 ------------
